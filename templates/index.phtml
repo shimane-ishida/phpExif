@@ -1,38 +1,35 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8"/>
+        <meta charset="utf-8">
         <title>Slim 3</title>
-        <link href='//fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
-        <style>
-            body {
-                margin: 50px 0 0 0;
-                padding: 0;
-                width: 100%;
-                font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-                text-align: center;
-                color: #aaa;
-                font-size: 18px;
-            }
-
-            h1 {
-                color: #719e40;
-                letter-spacing: -3px;
-                font-family: 'Lato', sans-serif;
-                font-size: 100px;
-                font-weight: 200;
-                margin-bottom: 0;
-            }
-        </style>
+        <link rel="stylesheet" href="http://yegor256.github.io/tacit/tacit.min.css">
     </head>
     <body>
-        <h1>Slim</h1>
-        <div>a microframework for PHP</div>
+        <!-- make sure the attribute enctype is set to multipart/form-data -->
+        <form method="post" enctype="multipart/form-data">
+            <!-- upload of a single file -->
+            <!-- <p>
+                <label>Add file (single): </label><br/>
+                <input type="file" name="example1"/>
+            </p> -->
 
-        <?php if (isset($name)) : ?>
-            <h2>Hello <?= htmlspecialchars($name); ?>!</h2>
-        <?php else: ?>
-            <p>Try <a href="http://www.slimframework.com">SlimFramework</a></p>
-        <?php endif; ?>
+            <!-- multiple input fields for the same input name, use brackets -->
+            <!-- <p>
+                <label>Add files (up to 2): </label><br/>
+                <input type="file" name="example2[]"/><br/>
+                <input type="file" name="example2[]"/>
+            </p> -->
+
+            <!-- one file input field that allows multiple files to be uploaded, use brackets -->
+            <p>
+                <label>ファイル選択 (複数選択可　最大サイズ120Mまで): </label><br/>
+                <input type="file" name="example3[]" multiple="multiple"/>
+            </p>
+
+            <p>
+                <input type="submit"/>
+            </p>
+        </form>
     </body>
 </html>
